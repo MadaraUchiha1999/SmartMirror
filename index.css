@@ -1,0 +1,41 @@
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+ 
+  margin: 0px;
+  max-width: 38rem;
+  
+  background-color: black;
+}
+#Uhrzeit {
+display: flex;
+color: silver;
+background-color: black;
+justify-content: center;
+font-size: 80px;
+font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+text-align: center;
+}
+#Datum {
+  display: flex;
+  color: silver;
+  background-color: black;
+  justify-content: center;
+  font-size: 40px;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+  text-align: center;
+  
+
+}
+#Rahmen{
+border-style: solid;
+border-color: silver;
+padding: 10px;
+text-align: center;
+}
+a:hover {
+background-color: blue;  
+}

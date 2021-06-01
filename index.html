@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Digitaluhr</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+  <div id="Rahmen">
+    <div id="Uhrzeit">
+      <span id="Stunden">12</span>
+      <span>:</span>
+      <span id="Minuten">60</span>
+      <span>:</span>
+      <span id="Sekunden">60</span> 
+    </div><br>
+    <div id="Datum">
+      <span id="Tag">-</span>
+      <span>.</span>
+      <span id="Monate">-</span>
+      <span>.</span>
+      <span id="Jahr">-</span> 
+    </div>
+  </div>
+    <script>
+     /* const electron = require('electron');
+      const ipcRenderer = electron.ipcRenderer;
+
+      ipcRenderer.on('Stunden',(event,data) => {
+        document.getElementById('Stunden').innerHTML = Stunden;
+      });
+
+     ipcRenderer.on('Minuten',(event,data) => {
+        document.getElementById('Minuten').innerHTML = Minuten;
+     });
+       ipcRenderer.on('Sekunden',(event,data) => {
+       document.getElementById('Sekunden').innerHTML = Sekunden;
+      }); */
+       setInterval(() => {
+      var time = Date.now();
+      var komischeZeit = new Date(time);
+      var Sekunden = komischeZeit.getSeconds();
+      var Minuten = komischeZeit.getMinutes();
+      var Stunden = komischeZeit.getHours(); 
+
+     
+      if (Stunden<10) {
+        Stunden = "0" + Stunden;
+        document.getElementById('Stunden').innerHTML = Stunden;
+      }else{
+        document.getElementById('Stunden').innerHTML = Stunden;
+      }
+      if (Minuten<10) {
+        Minuten = "0" + Minuten;
+        document.getElementById('Minuten').innerHTML = Minuten;
+      }else{
+        document.getElementById('Minuten').innerHTML = Minuten;
+      } 
+      if (Sekunden<10) {
+        Sekunden = "0" + Sekunden;
+        document.getElementById('Sekunden').innerHTML = Sekunden;
+      }else{
+        document.getElementById('Sekunden').innerHTML = Sekunden;
+      } 
+         
+    }, 1000);
+    
+    setInterval(() => {
+      var timestamp = Date.now();
+      var heute = new Date(timestamp);
+      var Tag = heute.getDate();
+      var Monate = ["Januar", "Februar", "März","April", "Mai","Juni","Juli","August","September","Oktober","November", "Dezember"]; 
+     
+      var Jahr = heute.getFullYear()
+      
+      
+      document.getElementById('Jahr').innerHTML = Jahr;
+      document.getElementById('Monate').innerHTML = Monate [heute.getMonth()];
+      if (Tag<10) {
+        Tag = "0" + Tag;
+        document.getElementById('Tag').innerHTML = Tag;
+      }else{
+        document.getElementById('Tag').innerHTML = Tag;
+      }
+      
+      
+      
+    
+    }, 1000); 
+      
+    </script>
+  </body>
+</html>
+
